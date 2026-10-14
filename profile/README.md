@@ -2,7 +2,7 @@
   <h1>📈 KoSTOPnews</h1>
   <p>기업 관련 뉴스를 수집하고 AI로 감성과 주요 이슈를 분석하는 뉴스 분석 서비스</p>
 
-  <a href="https://kostopnews.duckdns.org/">
+  <a href="https://kostopnews-dashboard-m98ehbe2kuyb2kuvtkva9g.streamlit.app/">
     <strong>🔗 KoSTOPnews 바로가기</strong>
   </a>
 </div>
@@ -68,15 +68,22 @@
 
 ### ⚙️ 자동화 및 운영
 
-* Apache Airflow를 활용한 데이터 파이프라인 자동화
-* Docker 기반 서비스 운영
-* GitHub Actions를 활용한 CI/CD
-* AWS EC2 및 RDS를 활용한 배포
+- **1차: AWS 기반 서비스 구축**
+  - Apache Airflow를 활용한 뉴스 수집 및 분석 파이프라인 자동화
+  - Docker 기반 서비스 컨테이너화 및 운영
+  - GitHub Actions를 활용한 CI/CD 구축
+  - AWS EC2 및 RDS를 활용한 서비스 배포
+
+- **2차: 배포 환경 개선 및 비용 최적화**
+  - FastAPI 서버를 Render로 이전
+  - Streamlit 대시보드를 Streamlit Community Cloud로 분리 배포
+  - Supabase PostgreSQL을 활용한 데이터베이스 운영
 
 ---
 
 ## 🏗️ Architecture
 
+- **1차 Architecture - AWS 기반 서비스 구축**
 <div align="center">
   <img src="./assets/architecture.png" alt="KoSTOPnews Architecture">
 </div>
@@ -92,7 +99,7 @@
 | **Frontend**       | Streamlit           |
 | **Database**       | PostgreSQL          |
 | **LLM**            | Upstage Solar Pro 3 |
-| **Infrastructure** | AWS EC2, RDS        |
+| **Infrastructure** | AWS EC2, RDS, Render, Streamlit Community Cloud |
 | **Container**      | Docker              |
 | **CI/CD**          | GitHub Actions      |
 | **Web Server**     | Nginx               |
@@ -105,6 +112,7 @@
 | --------------------------------------------- | ----------------------- |
 | [`kostopnews-airflow`](https://github.com/2026-KoSTOPnews/kostopnews-airflow)   | 뉴스 수집 및 AI 분석·집계 파이프라인 |
 | [`kostopnews-fastapi`](https://github.com/2026-KoSTOPnews/kostopnews-fastapi)   | 뉴스 분석 결과 조회 API & Streamlit 기반 분석 결과 대시보드 |
+| [`kostopnews-dashboard`](https://github.com/2026-KoSTOPnews/kostopnews-dashboard) | Streamlit 기반 뉴스 분석 결과 대시보드 |
 
 ---
 
