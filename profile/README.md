@@ -2,7 +2,7 @@
   <h1>📈 KoSTOPnews</h1>
   <p>기업 관련 뉴스를 수집하고 AI로 감성과 주요 이슈를 분석하는 뉴스 분석 서비스</p>
 
-  <a href="https://kostopnews-dashboard-m98ehbe2kuyb2kuvtkva9g.streamlit.app/">
+  <a href="https://kostopnews-dashboard-knbacprfdssadqqngdxkuz.streamlit.app/">
     <strong>🔗 KoSTOPnews 바로가기</strong>
   </a>
 </div>
@@ -111,7 +111,7 @@
 | Repository                                    | Description             |
 | --------------------------------------------- | ----------------------- |
 | [`kostopnews-airflow`](https://github.com/2026-KoSTOPnews/kostopnews-airflow)   | 뉴스 수집 및 AI 분석·집계 파이프라인 |
-| [`kostopnews-fastapi`](https://github.com/2026-KoSTOPnews/kostopnews-fastapi)   | 뉴스 분석 결과 조회 API & Streamlit 기반 분석 결과 대시보드 |
+| [`kostopnews-fastapi`](https://github.com/2026-KoSTOPnews/kostopnews-fastapi)   | 뉴스 분석 결과 조회 API |
 | [`kostopnews-dashboard`](https://github.com/2026-KoSTOPnews/kostopnews-dashboard) | Streamlit 기반 뉴스 분석 결과 대시보드 |
 
 ---
