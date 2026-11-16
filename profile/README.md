@@ -19,7 +19,8 @@
 | **프로젝트 유형** | 개인 프로젝트                               |
 | **목표**      | 기업 관련 뉴스 수집 및 AI 기반 감성·키워드 분석         |
 | **주요 기능**   | 뉴스 수집 · 감성 분석 · 키워드 분석 · 기간별 집계 · 시각화 |
-| **배포 환경**   | AWS EC2 · RDS                         |
+| **초기 배포 환경**   | AWS EC2 · RDS (PostgreSQL)                         |
+| **개선 배포 환경** | Oracle Cloud Infrastructure (OCI) · Render · Streamlit Community Cloud · Supabase PostgreSQL |
 
 ---
 
@@ -75,9 +76,12 @@
   - AWS EC2 및 RDS를 활용한 서비스 배포
 
 - **2차: 배포 환경 개선 및 비용 최적화**
-  - FastAPI 서버를 Render로 이전
+  - FastAPI 서버를 Render로 이전하여 API 서버 배포 환경 개선
   - Streamlit 대시보드를 Streamlit Community Cloud로 분리 배포
-  - Supabase PostgreSQL을 활용한 데이터베이스 운영
+  - Airflow를 Oracle Cloud Infrastructure(OCI) 인스턴스로 이전하여 데이터 수집 및 분석 파이프라인 운영
+  - Airflow 메타데이터 DB와 분석 데이터 DB 분리
+    - Airflow 메타데이터 DB: 별도의 OCI 인스턴스에서 Docker 기반 PostgreSQL 운영 (Airflow 로그 및 XCom 저장)
+    - 분석 데이터 DB: Supabase PostgreSQL 활용 (원본 뉴스 데이터 및 AI 분석 결과 저장)
 
 ---
 
@@ -86,6 +90,11 @@
 - **1차 Architecture - AWS 기반 서비스 구축**
 <div align="center">
   <img src="./assets/architecture.png" alt="KoSTOPnews Architecture">
+</div>
+
+- **2차 Architecture - 배포 환경 개선 및 비용 최적화**
+<div align="center">
+  <img src="./assets/architecture2.png" alt="KoSTOPnews Architecture2">
 </div>
 
 ---
@@ -99,7 +108,7 @@
 | **Frontend**       | Streamlit           |
 | **Database**       | PostgreSQL          |
 | **LLM**            | Upstage Solar Pro 3 |
-| **Infrastructure** | AWS EC2, RDS, Render, Streamlit Community Cloud |
+| **Infrastructure** | AWS EC2, AWS RDS, Oracle Cloud Infrastructure (OCI), Render, Streamlit Community Cloud |
 | **Container**      | Docker              |
 | **CI/CD**          | GitHub Actions      |
 | **Web Server**     | Nginx               |
