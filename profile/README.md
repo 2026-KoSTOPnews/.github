@@ -92,6 +92,8 @@
   <img src="./assets/architecture.png" alt="KoSTOPnews Architecture">
 </div>
 
+<br/><br/>
+
 - **2차 Architecture - 배포 환경 개선 및 비용 최적화**
 <div align="center">
   <img src="./assets/architecture2.png" alt="KoSTOPnews Architecture2">
@@ -129,5 +131,5 @@
 
 | Name   | Role                          | Responsibilities                           |
 | ------ | ----------------------------- | ------------------------------------------ |
-| [**Boyeong-G**](https://github.com/Boyeong-G) | Backend · AI · Infrastructure | 뉴스 수집·분석 파이프라인, API 및 대시보드, AWS 배포 및 CI/CD |
+| [**Boyeong-G**](https://github.com/Boyeong-G) | Backend · Infrastructure | 뉴스 수집·AI 분석, 서비스 개발 및 클라우드 배포·운영 |
 
