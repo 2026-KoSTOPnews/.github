@@ -109,7 +109,7 @@
 | **Data Pipeline**  | Apache Airflow      |
 | **Frontend**       | Streamlit           |
 | **Database**       | PostgreSQL          |
-| **LLM**            | Upstage Solar Pro 3 |
+| **LLM**            | Upstage Solar |
 | **Infrastructure** | AWS EC2, AWS RDS, Oracle Cloud Infrastructure (OCI), Render, Streamlit Community Cloud |
 | **Container**      | Docker              |
 | **CI/CD**          | GitHub Actions      |
